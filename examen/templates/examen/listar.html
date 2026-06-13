@@ -1,0 +1,20 @@
+{% extends 'examen/base.html' %}
+
+{% block content %}
+    <h2>Intervenciones</h2>
+    {% for i in intervenciones %}
+        <div>
+            <h3>{{ i.nombre }}</h3>
+            <p>{{ i.descripcion }}</p>
+            <p>Riesgo: {{ i.nivel_riesgo }} | Fecha: {{ i.fecha_programada }}</p>
+            <p>Completada: {{ i.completada }}</p>
+            {% if user.rol == 'veterinario' %}
+                <a href="{% url 'editar' i.pk %}">Editar</a>
+                <a href="{% url 'eliminar' i.pk %}">Eliminar</a>
+            {% endif %}
+        </div>
+        <hr>
+    {% empty %}
+        <p>No hay intervenciones.</p>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,5 @@
+{% extends 'examen/base.html' %}
+
+{% block content %}
+    <h1>Bienvenido{% if user.is_authenticated %}, {{ user.username }}{% endif %}</h1>
+{% endblock %}

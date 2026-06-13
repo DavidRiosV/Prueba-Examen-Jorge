@@ -1,0 +1,25 @@
+{% extends 'examen/base.html' %}
+
+{% block content %}
+    <h2>Búsqueda de Intervenciones</h2>
+
+    <form method="get">
+        {{ form.as_p }}
+        <button type="submit">Buscar</button>
+    </form>
+
+    <hr>
+
+    <h3>Resultados</h3>
+    {% for i in resultados %}
+        <div>
+            <h4>{{ i.nombre }}</h4>
+            <p>{{ i.descripcion }}</p>
+            <p>Riesgo: {{ i.nivel_riesgo }} | Fecha: {{ i.fecha_programada }}</p>
+            <p>Completada: {{ i.completada }}</p>
+        </div>
+        <hr>
+    {% empty %}
+        <p>No hay resultados.</p>
+    {% endfor %}
+{% endblock %}

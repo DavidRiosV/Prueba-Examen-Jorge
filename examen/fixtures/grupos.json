@@ -1,0 +1,25 @@
+[
+{
+  "model": "auth.group",
+  "pk": 1,
+  "fields": {
+    "name": "Duenos",
+    "permissions": [
+      36
+    ]
+  }
+},
+{
+  "model": "auth.group",
+  "pk": 2,
+  "fields": {
+    "name": "Veterinarios",
+    "permissions": [
+      33,
+      34,
+      35,
+      36
+    ]
+  }
+}
+]

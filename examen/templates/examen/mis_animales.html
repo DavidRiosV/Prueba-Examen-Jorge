@@ -1,0 +1,14 @@
+{% extends 'examen/base.html' %}
+
+{% block content %}
+    <h2>Mis Animales</h2>
+    {% for animal in animales %}
+        <div>
+            <p><strong>{{ animal.nombre }}</strong> - {{ animal.especie }}</p>
+            <p>Fecha nacimiento: {{ animal.fecha_nacimiento }}</p>
+        </div>
+        <hr>
+    {% empty %}
+        <p>No tienes animales registrados.</p>
+    {% endfor %}
+{% endblock %}
